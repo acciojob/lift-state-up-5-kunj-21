@@ -16,7 +16,7 @@ const Child = ({ isLoggedIn, onLogin }) => {
     <div>
       
       {isLoggedIn ? (
-        <h2>You are already logged in!</h2>
+        <h2>You are logged in!</h2>
       ) : (
         <form onSubmit={handleSubmit}>
           <div>
