@@ -1,16 +1,22 @@
-
-import React from "react";
-import './../styles/App.css';
-import Parent from "./Parent";
+import React, { useState } from "react";
+import Child from "./Child";
 
 const App = () => {
-  return (
-    <div>
-      <h1>Parent Component</h1>
-        {/* Do not remove the main div */}
-        <Parent/>
-    </div>
-  )
-}
+ 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-export default App
+
+  const handleLogin = () => {
+    setIsLoggedIn(true); 
+  };
+
+  return (
+    <div className="App">
+      <h1>{isLoggedIn ? "Welcome, User!" : "Please Log In"}</h1>
+     
+      <Child isLoggedIn={isLoggedIn} onLogin={handleLogin} />
+    </div>
+  );
+};
+
+export default App;
